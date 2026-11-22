@@ -118,9 +118,9 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Giant background wordmark */}
-      <div aria-hidden="true" className="pointer-events-none -mb-6 overflow-hidden select-none md:-mb-10">
-        <p className="font-grotesk text-center text-[19vw] leading-[0.8] font-bold tracking-tight text-white/[0.04]">
+      {/* Giant background wordmark — fully visible, never cropped */}
+      <div aria-hidden="true" className="pointer-events-none pb-6 select-none md:pb-8">
+        <p className="font-grotesk text-center text-[19vw] leading-none font-bold tracking-tight text-white/[0.04]">
           SOMYA
         </p>
       </div>

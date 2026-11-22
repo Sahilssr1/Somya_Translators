@@ -1,27 +1,53 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { REGIONS } from "../../data/content";
+import { WORLD_MAP_PATHS, type MapRegionId } from "../../data/worldMap";
 import { Reveal, SectionTag, WordReveal } from "../ui";
 
-/* Hotspot positions (percentages over the 1000×500 map viewBox). */
+/* Hotspot positions — real geography on the 1000×500 equirectangular map. */
 const HOTSPOTS: Record<string, { left: string; top: string }> = {
-  india: { left: "66%", top: "45%" },
-  asia: { left: "76%", top: "28%" },
-  europe: { left: "51.5%", top: "24%" },
-  africa: { left: "52%", top: "50%" },
-  americas: { left: "19%", top: "40%" },
+  india: { left: "71.4%", top: "34.4%" },
+  asia: { left: "79.2%", top: "30.6%" },
+  europe: { left: "54.2%", top: "20%" },
+  africa: { left: "55.6%", top: "47.2%" },
+  americas: { left: "22.2%", top: "27.8%" },
 };
 
-/** Stylised world map — simplified continent blobs, not geographically precise. */
-function WorldMap({ activeId }: { activeId: string }) {
-  const land = "fill-white/[0.06] stroke-white/20";
+/* Hotspot points in SVG coordinates, for the connection arcs from India. */
+const POINTS: Record<MapRegionId, [number, number]> = {
+  india: [714, 172],
+  asia: [792, 153],
+  europe: [542, 100],
+  africa: [556, 236],
+  americas: [222, 139],
+};
+
+const REGION_ORDER: MapRegionId[] = ["americas", "europe", "africa", "asia", "india"];
+
+/** Real world map — Natural Earth 110m country outlines, grouped by region. */
+function WorldMap({ activeId, onSelect }: { activeId: string; onSelect: (id: string) => void }) {
+  const [indiaX, indiaY] = POINTS.india;
   return (
     <svg
       viewBox="0 0 1000 500"
       className="h-full w-full"
       role="img"
-      aria-label="Stylised world map showing the regions Somya Translators serves"
+      aria-label="World map showing the regions Somya Translators serves — select a region to see its languages"
     >
+      <defs>
+        <radialGradient id="mapGlow" cx="50%" cy="42%" r="65%">
+          <stop offset="0%" stopColor="#55D6C2" stopOpacity="0.10" />
+          <stop offset="60%" stopColor="#55D6C2" stopOpacity="0.03" />
+          <stop offset="100%" stopColor="#55D6C2" stopOpacity="0" />
+        </radialGradient>
+        <radialGradient id="indiaGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#55D6C2" stopOpacity="0.35" />
+          <stop offset="100%" stopColor="#55D6C2" stopOpacity="0" />
+        </radialGradient>
+      </defs>
+
+      <rect width="1000" height="500" fill="url(#mapGlow)" />
+
       {/* Graticule */}
       {[100, 200, 300, 400].map((y) => (
         <line key={y} x1="0" y1={y} x2="1000" y2={y} className="stroke-white/[0.05]" strokeDasharray="2 8" />
@@ -29,54 +55,59 @@ function WorldMap({ activeId }: { activeId: string }) {
       {[200, 400, 600, 800].map((x) => (
         <line key={x} x1={x} y1="0" x2={x} y2="500" className="stroke-white/[0.05]" strokeDasharray="2 8" />
       ))}
+      {/* Equator */}
+      <line x1="0" y1="250" x2="1000" y2="250" className="stroke-white/[0.08]" strokeDasharray="1 6" />
+      <text x="8" y="244" className="fill-white/30 font-grotesk" fontSize="9" letterSpacing="2">
+        EQUATOR
+      </text>
 
-      {/* North America */}
-      <path
-        className={land}
-        strokeWidth="1.5"
-        d="M 58 150 C 88 92, 168 68, 232 94 C 272 114, 282 162, 250 202 C 228 232, 198 238, 168 216 C 118 200, 58 202, 58 150 Z"
-      />
-      {/* South America */}
-      <path
-        className={land}
-        strokeWidth="1.5"
-        d="M 235 262 C 260 240, 302 250, 312 292 C 318 332, 292 382, 266 398 C 244 382, 224 330, 230 290 C 232 278, 232 270, 235 262 Z"
-      />
-      {/* Europe */}
-      <path
-        className={land}
-        strokeWidth="1.5"
-        d="M 470 110 C 490 84, 542 78, 562 104 C 578 126, 562 156, 530 162 C 500 166, 464 146, 470 110 Z"
-      />
-      {/* Africa */}
-      <path
-        className={land}
-        strokeWidth="1.5"
-        d="M 465 200 C 490 174, 546 168, 576 200 C 596 230, 582 286, 546 316 C 510 332, 478 300, 464 258 C 458 234, 458 216, 465 200 Z"
-      />
-      {/* Asia */}
-      <path
-        className={land}
-        strokeWidth="1.5"
-        d="M 590 90 C 660 58, 762 64, 832 100 C 872 126, 862 176, 810 206 C 758 236, 678 230, 628 200 C 594 176, 574 122, 590 90 Z"
-      />
-      {/* India — highlighted */}
-      <motion.path
-        strokeWidth="1.5"
-        d="M 640 196 C 656 184, 676 190, 682 212 C 688 236, 676 262, 660 267 C 644 256, 634 226, 640 196 Z"
-        className="stroke-[#55D6C2]"
-        initial={false}
-        animate={{
-          fill: activeId === "india" ? "rgba(85, 214, 194, 0.45)" : "rgba(85, 214, 194, 0.18)",
-        }}
-        transition={{ duration: 0.5 }}
-      />
-      {/* Oceania */}
-      <path
-        className={land}
-        strokeWidth="1.5"
-        d="M 830 320 C 860 304, 906 310, 922 336 C 932 362, 900 382, 864 376 C 838 368, 818 346, 830 320 Z"
-      />
+      {/* India halo */}
+      <circle cx={indiaX} cy={indiaY} r="52" fill="url(#indiaGlow)" />
+
+      {/* Land — one path per region, clickable, active region glows */}
+      {REGION_ORDER.map((id) => {
+        const isActive = activeId === id;
+        return (
+          <motion.path
+            key={id}
+            d={WORLD_MAP_PATHS[id]}
+            strokeWidth={isActive ? 2 : 1.5}
+            className="cursor-pointer"
+            onClick={() => onSelect(id)}
+            initial={false}
+            animate={{
+              fill: isActive ? "rgba(85, 214, 194, 0.32)" : "rgba(255, 255, 255, 0.12)",
+              stroke: isActive ? "#55D6C2" : "rgba(255, 255, 255, 0.55)",
+            }}
+            whileHover={{ fill: "rgba(85, 214, 194, 0.22)" }}
+            transition={{ duration: 0.5 }}
+          >
+            <title>{REGIONS.find((r) => r.id === id)?.label}</title>
+          </motion.path>
+        );
+      })}
+
+      {/* Connection arcs flowing out of India, drawn over the land */}
+      {(Object.keys(POINTS) as MapRegionId[])
+        .filter((id) => id !== "india")
+        .map((id) => {
+          const [x, y] = POINTS[id];
+          const mx = (indiaX + x) / 2;
+          const my = Math.min(indiaY, y) - 42;
+          const isActive = activeId === id;
+          return (
+            <path
+              key={id}
+              d={`M ${indiaX} ${indiaY} Q ${mx} ${my} ${x} ${y}`}
+              fill="none"
+              strokeWidth={isActive ? 1.4 : 1}
+              strokeDasharray="4 7"
+              className={`animate-dash-flow pointer-events-none transition-opacity duration-500 ${
+                isActive ? "stroke-[#55D6C2] opacity-90" : "stroke-white/25 opacity-50"
+              }`}
+            />
+          );
+        })}
     </svg>
   );
 }
@@ -105,7 +136,15 @@ export default function Languages() {
         {/* ---- Interactive map ---- */}
         <Reveal className="mt-14">
           <div className="relative aspect-[2/1] w-full overflow-hidden rounded-2xl border border-white/10 bg-[#0B1220]">
-            <WorldMap activeId={activeId} />
+            <WorldMap activeId={activeId} onSelect={setActiveId} />
+
+            {/* Map caption */}
+            <div aria-hidden="true" className="pointer-events-none absolute top-4 left-5 hidden items-center gap-3 sm:flex">
+              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#55D6C2]" />
+              <span className="font-grotesk text-[10px] font-semibold tracking-[0.28em] text-white/50 uppercase">
+                Global coverage · 176 countries · Click a region
+              </span>
+            </div>
 
             {/* Hotspot buttons */}
             {REGIONS.map((region) => {

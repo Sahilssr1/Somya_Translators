@@ -83,6 +83,7 @@
   --animate-spin-slow: spin 14s linear infinite;
   --animate-scroll-dot: scroll-dot 2.2s ease-in-out infinite;
   --animate-pulse-ring: pulse-ring 2.6s ease-out infinite;
+  --animate-dash-flow: dash-flow 9s linear infinite;
 }
 
 @keyframes marquee {
@@ -104,6 +105,10 @@
 @keyframes pulse-ring {
   0% { transform: scale(0.6); opacity: 0.8; }
   100% { transform: scale(2.1); opacity: 0; }
+}
+
+@keyframes dash-flow {
+  to { stroke-dashoffset: -180; }
 }
 
 html {
