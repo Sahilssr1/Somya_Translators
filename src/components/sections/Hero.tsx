@@ -15,14 +15,14 @@ const HEADLINE_WORDS: { text: string; accent?: boolean; underline?: boolean }[] 
 ];
 
 const FLOATING_LABELS = [
-  { text: "Hello", className: "right-[6%] top-[14%]", delay: "0s" },
-  { text: "नमस्ते", className: "right-[18%] top-[24%]", delay: "1.4s" },
-  { text: "Hola", className: "right-[5%] top-[33%]", delay: "0.7s" },
-  { text: "Ciao", className: "left-[6%] top-[16%]", delay: "1.9s" },
-  { text: "Olá", className: "left-[15%] top-[26%]", delay: "0.4s" },
-  { text: "你好", className: "left-[5%] top-[35%]", delay: "2.4s" },
-  { text: "Bonjour", className: "right-[17%] top-[77%]", delay: "2s" },
-  { text: "こんにちは", className: "right-[6%] top-[86%]", delay: "1.1s" },
+  { text: "Hello", className: "right-[6%] top-[12%]", delay: "0s" },
+  { text: "नमस्ते", className: "right-[17%] top-[20%]", delay: "1.4s" },
+  { text: "Hola", className: "right-[5%] top-[28%]", delay: "0.7s" },
+  { text: "Ciao", className: "right-[15%] top-[36%]", delay: "1.9s" },
+  { text: "Olá", className: "right-[7%] top-[70%]", delay: "0.4s" },
+  { text: "你好", className: "right-[18%] top-[76%]", delay: "2.4s" },
+  { text: "Bonjour", className: "right-[6%] top-[82%]", delay: "2s" },
+  { text: "こんにちは", className: "right-[16%] top-[88%]", delay: "1.1s" },
 ];
 
 const GREETINGS = ["Hello", "नमस्ते", "Hola", "Ciao", "Olá", "你好", "Bonjour", "こんにちは"];
