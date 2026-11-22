@@ -15,17 +15,21 @@ const HEADLINE_WORDS: { text: string; accent?: boolean; underline?: boolean }[] 
 ];
 
 const FLOATING_LABELS = [
-  { text: "Hello", className: "right-[6%] top-[12%]", delay: "0s" },
-  { text: "नमस्ते", className: "right-[17%] top-[20%]", delay: "1.4s" },
-  { text: "Hola", className: "right-[5%] top-[28%]", delay: "0.7s" },
-  { text: "Ciao", className: "right-[15%] top-[36%]", delay: "1.9s" },
-  { text: "Olá", className: "right-[7%] top-[70%]", delay: "0.4s" },
-  { text: "你好", className: "right-[18%] top-[76%]", delay: "2.4s" },
-  { text: "Bonjour", className: "right-[6%] top-[82%]", delay: "2s" },
-  { text: "こんにちは", className: "right-[16%] top-[88%]", delay: "1.1s" },
+  { text: "Hello", className: "right-[6%] top-[10%]", delay: "0s" },
+  { text: "नमस्ते", className: "right-[16%] top-[15%]", delay: "1.4s" },
+  { text: "Hola", className: "right-[5%] top-[20%]", delay: "0.7s" },
+  { text: "Ciao", className: "right-[15%] top-[25%]", delay: "1.9s" },
+  { text: "مرحبا", className: "right-[6%] top-[30%]", delay: "0.4s" },
+  { text: "Hallo", className: "right-[16%] top-[35%]", delay: "2.2s" },
+  { text: "Olá", className: "right-[7%] top-[62%]", delay: "1.1s" },
+  { text: "你好", className: "right-[17%] top-[67%]", delay: "2.4s" },
+  { text: "Bonjour", className: "right-[6%] top-[72%]", delay: "2s" },
+  { text: "안녕하세요", className: "right-[16%] top-[77%]", delay: "0.9s" },
+  { text: "こんにちは", className: "right-[7%] top-[82%]", delay: "1.6s" },
+  { text: "Здравствуйте", className: "right-[15%] top-[87%]", delay: "0.2s" },
 ];
 
-const GREETINGS = ["Hello", "नमस्ते", "Hola", "Ciao", "Olá", "你好", "Bonjour", "こんにちは"];
+const GREETINGS = ["Hello", "नमस्ते", "Hola", "Ciao", "مرحبا", "Hallo", "Olá", "你好", "Bonjour", "안녕하세요", "こんにちは", "Здравствуйте"];
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
