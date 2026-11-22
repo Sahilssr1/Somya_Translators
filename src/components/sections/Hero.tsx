@@ -16,20 +16,16 @@ const HEADLINE_WORDS: { text: string; accent?: boolean; underline?: boolean }[] 
 
 const FLOATING_LABELS = [
   { text: "Hello", className: "right-[6%] top-[10%]", delay: "0s" },
-  { text: "नमस्ते", className: "right-[16%] top-[15%]", delay: "1.4s" },
-  { text: "Hola", className: "right-[5%] top-[20%]", delay: "0.7s" },
-  { text: "Ciao", className: "right-[15%] top-[25%]", delay: "1.9s" },
-  { text: "مرحبا", className: "right-[6%] top-[30%]", delay: "0.4s" },
-  { text: "Hallo", className: "right-[16%] top-[35%]", delay: "2.2s" },
-  { text: "Olá", className: "right-[7%] top-[62%]", delay: "1.1s" },
-  { text: "你好", className: "right-[17%] top-[67%]", delay: "2.4s" },
-  { text: "Bonjour", className: "right-[6%] top-[72%]", delay: "2s" },
-  { text: "안녕하세요", className: "right-[16%] top-[77%]", delay: "0.9s" },
-  { text: "こんにちは", className: "right-[7%] top-[82%]", delay: "1.6s" },
-  { text: "Здравствуйте", className: "right-[15%] top-[87%]", delay: "0.2s" },
+  { text: "नमस्ते", className: "right-[16%] top-[20%]", delay: "1.4s" },
+  { text: "Hola", className: "right-[5%] top-[30%]", delay: "0.7s" },
+  { text: "Ciao", className: "right-[3%] top-[38%]", delay: "1.9s" },
+  { text: "Olá", className: "right-[2%] top-[52%]", delay: "0.4s" },
+  { text: "你好", className: "right-[15%] top-[65%]", delay: "2.4s" },
+  { text: "Bonjour", className: "right-[6%] top-[76%]", delay: "2s" },
+  { text: "こんにちは", className: "right-[15%] top-[87%]", delay: "1.1s" },
 ];
 
-const GREETINGS = ["Hello", "नमस्ते", "Hola", "Ciao", "مرحبا", "Hallo", "Olá", "你好", "Bonjour", "안녕하세요", "こんにちは", "Здравствуйте"];
+const GREETINGS = ["Hello", "नमस्ते", "Hola", "Ciao", "Olá", "你好", "Bonjour", "こんにちは"];
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -125,14 +121,6 @@ export default function Hero() {
           {label.text}
         </span>
       ))}
-
-      {/* Vertical office line, far right edge. */}
-      <span
-        aria-hidden="true"
-        className="vertical-label pointer-events-none absolute top-1/2 right-5 z-10 hidden -translate-y-1/2 font-grotesk text-[10px] tracking-[0.45em] text-white/45 uppercase xl:block"
-      >
-        New Delhi — Noida — Mumbai
-      </span>
 
       {/* ---- Content: bottom-left, editorial ---- */}
       <div className="relative z-10 flex min-h-svh flex-col">
