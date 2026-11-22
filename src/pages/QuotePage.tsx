@@ -171,7 +171,7 @@ export default function QuotePage() {
   return (
     <div className="bg-bg text-ink">
       <div className="mx-auto max-w-[1440px] px-5 pt-32 pb-24 md:px-10 md:pb-32">
-        <SectionTag index="12" label="Get a quote" />
+        <SectionTag label="Get a quote" />
 
         <div className="mt-8 grid gap-14 lg:grid-cols-[1fr_1.25fr] lg:gap-20">
           {/* ---- Sticky left column ---- */}

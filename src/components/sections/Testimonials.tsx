@@ -34,7 +34,7 @@ export default function Testimonials() {
       className="relative overflow-hidden bg-[#080D16] text-white"
     >
       <div className="grain relative mx-auto max-w-[1440px] px-5 py-24 md:px-10 md:py-32">
-        <SectionTag index="08" label="Client voices" light />
+        <SectionTag label="Client voices" light />
 
         <div
           className="mt-10"

@@ -15,12 +15,14 @@ const HEADLINE_WORDS: { text: string; accent?: boolean; underline?: boolean }[] 
 ];
 
 const FLOATING_LABELS = [
-  { text: "Hello", className: "right-[7%] top-[16%]", delay: "0s" },
-  { text: "नमस्ते", className: "right-[20%] top-[30%]", delay: "1.4s" },
-  { text: "Hola", className: "right-[6%] top-[44%]", delay: "0.7s" },
-  { text: "Bonjour", className: "right-[18%] top-[58%]", delay: "2s" },
-  { text: "こんにちは", className: "right-[8%] top-[72%]", delay: "1.1s" },
+  { text: "Hello", className: "right-[6%] top-[14%]", delay: "0s" },
+  { text: "नमस्ते", className: "right-[18%] top-[24%]", delay: "1.4s" },
+  { text: "Hola", className: "right-[5%] top-[33%]", delay: "0.7s" },
+  { text: "Bonjour", className: "right-[17%] top-[77%]", delay: "2s" },
+  { text: "こんにちは", className: "right-[6%] top-[86%]", delay: "1.1s" },
 ];
+
+const GREETINGS = ["Hello", "नमस्ते", "Hola", "Bonjour", "こんにちは"];
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -141,6 +143,26 @@ export default function Hero() {
         <div className="flex flex-1 items-end">
           <div className="mx-auto flex w-full max-w-[1440px] items-end justify-between gap-10 px-5 pt-32 pb-10 md:px-10 md:pb-14">
             <div className="min-w-0">
+              {/* Greetings strip — mobile only (desktop uses floating labels). */}
+              <motion.p
+                aria-hidden="true"
+                initial={reducedMotion ? false : { opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.05, ease: EASE }}
+                className="mb-5 flex flex-wrap gap-x-3 gap-y-1 font-display text-lg italic text-white/75 lg:hidden"
+              >
+                {GREETINGS.map((g, i) => (
+                  <span key={g} className="flex items-center gap-3">
+                    {g}
+                    {i < GREETINGS.length - 1 && (
+                      <span aria-hidden="true" className="text-sm text-[#FF5F57] not-italic">
+                        ·
+                      </span>
+                    )}
+                  </span>
+                ))}
+              </motion.p>
+
               <motion.div
                 initial={reducedMotion ? false : { opacity: 0, y: 18 }}
                 animate={{ opacity: 1, y: 0 }}

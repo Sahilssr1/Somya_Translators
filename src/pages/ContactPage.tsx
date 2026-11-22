@@ -231,7 +231,7 @@ export default function ContactPage() {
     <div className="bg-bg text-ink">
       {/* ------------------------------- Hero ------------------------------ */}
       <div className="mx-auto max-w-[1440px] px-5 pt-32 pb-16 md:px-10 md:pb-20">
-        <SectionTag index="14" label="Contact" />
+        <SectionTag label="Contact" />
 
         <div className="mt-8 flex flex-wrap items-end justify-between gap-8">
           <h1 className="max-w-3xl font-display text-5xl leading-[1.02] font-medium text-balance sm:text-6xl lg:text-7xl">
@@ -298,92 +298,13 @@ export default function ContactPage() {
         </Reveal>
       </div>
 
-      {/* ------------------------------ Offices ---------------------------- */}
-      <section aria-label="Our offices" className="bg-[#080D16] text-white">
-        <div className="mx-auto max-w-[1440px] px-5 py-20 md:px-10 md:py-28">
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <div>
-              <SectionTag index="14" label="Offices" light />
-              <h2 className="mt-6 font-display text-4xl leading-[1.05] font-medium text-balance md:text-5xl">
-                <WordReveal text="Four offices. One team." accentWords={["team."]} />
-              </h2>
-            </div>
-            <Reveal delay={0.1}>
-              <p className="max-w-md text-base leading-relaxed text-hero-muted">
-                Headquartered in Delhi, with branches in Noida and Mumbai —
-                and a US office in Los Angeles for clients across the Americas.
-              </p>
-            </Reveal>
-          </div>
-
-          <div className="mt-14 grid gap-6 md:grid-cols-2">
-            {OFFICES.map((office, i) => (
-              <Reveal key={office.city} delay={(i % 2) * 0.1}>
-                <article
-                  className={`flex h-full flex-col rounded-2xl border p-7 md:p-9 ${
-                    i === 0
-                      ? "border-[#FF5F57]/50 bg-white/[0.06]"
-                      : "border-white/12 bg-white/[0.03]"
-                  }`}
-                >
-                  <div className="flex items-baseline justify-between gap-4">
-                    <h3 className="font-display text-3xl font-medium md:text-4xl">
-                      {office.city}
-                    </h3>
-                    <span
-                      className={`font-grotesk text-[10px] font-bold tracking-[0.28em] uppercase ${
-                        i === 0 ? "text-[#FF5F57]" : "text-hero-muted"
-                      }`}
-                    >
-                      {office.label}
-                    </span>
-                  </div>
-                  <address className="mt-5 text-base leading-relaxed text-hero-muted not-italic">
-                    {office.address}
-                  </address>
-                  <div className="mt-6 flex flex-col gap-2 border-t border-white/12 pt-6">
-                    {office.phones.map((phone) => (
-                      <a
-                        key={phone.display}
-                        href={phone.href}
-                        className="link-underline w-fit font-grotesk text-base font-semibold text-white"
-                      >
-                        {phone.display}
-                      </a>
-                    ))}
-                  </div>
-                  {office.note && (
-                    <p className="mt-4 text-sm text-hero-muted">{office.note}</p>
-                  )}
-                </article>
-              </Reveal>
-            ))}
-          </div>
-
-          <Reveal delay={0.15}>
-            <p className="mt-10 text-sm leading-relaxed text-hero-muted">
-              Career enquiries are handled through the careers page on{" "}
-              <a
-                href="https://www.somyatrans.com"
-                target="_blank"
-                rel="noreferrer"
-                className="link-underline font-semibold text-white"
-              >
-                somyatrans.com
-              </a>
-              .
-            </p>
-          </Reveal>
-        </div>
-      </section>
-
       {/* ------------------------- Form + info rail ------------------------ */}
       <div className="mx-auto max-w-[1440px] px-5 py-20 md:px-10 md:py-28">
         <div className="grid gap-14 lg:grid-cols-[1.25fr_1fr] lg:gap-20">
           {/* ---- Form / success ---- */}
           <div>
             <p className="font-grotesk text-[11px] font-bold tracking-[0.28em] text-muted uppercase">
-              14 — Write to us
+              Write to us
             </p>
             <h2 className="mt-6 font-display text-4xl leading-[1.05] font-medium text-balance md:text-5xl">
               <WordReveal text="Send us a message." accentWords={["message."]} />
@@ -782,6 +703,85 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
+      {/* ------------------------------ Offices ---------------------------- */}
+      <section aria-label="Our offices" className="bg-[#080D16] text-white">
+        <div className="mx-auto max-w-[1440px] px-5 py-20 md:px-10 md:py-28">
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <SectionTag label="Offices" light />
+              <h2 className="mt-6 font-display text-4xl leading-[1.05] font-medium text-balance md:text-5xl">
+                <WordReveal text="Four offices. One team." accentWords={["team."]} />
+              </h2>
+            </div>
+            <Reveal delay={0.1}>
+              <p className="max-w-md text-base leading-relaxed text-hero-muted">
+                Headquartered in Delhi, with branches in Noida and Mumbai —
+                and a US office in Los Angeles for clients across the Americas.
+              </p>
+            </Reveal>
+          </div>
+
+          <div className="mt-14 grid gap-6 md:grid-cols-2">
+            {OFFICES.map((office, i) => (
+              <Reveal key={office.city} delay={(i % 2) * 0.1}>
+                <article
+                  className={`flex h-full flex-col rounded-2xl border p-7 md:p-9 ${
+                    i === 0
+                      ? "border-[#FF5F57]/50 bg-white/[0.06]"
+                      : "border-white/12 bg-white/[0.03]"
+                  }`}
+                >
+                  <div className="flex items-baseline justify-between gap-4">
+                    <h3 className="font-display text-3xl font-medium md:text-4xl">
+                      {office.city}
+                    </h3>
+                    <span
+                      className={`font-grotesk text-[10px] font-bold tracking-[0.28em] uppercase ${
+                        i === 0 ? "text-[#FF5F57]" : "text-hero-muted"
+                      }`}
+                    >
+                      {office.label}
+                    </span>
+                  </div>
+                  <address className="mt-5 text-base leading-relaxed text-hero-muted not-italic">
+                    {office.address}
+                  </address>
+                  <div className="mt-6 flex flex-col gap-2 border-t border-white/12 pt-6">
+                    {office.phones.map((phone) => (
+                      <a
+                        key={phone.display}
+                        href={phone.href}
+                        className="link-underline w-fit font-grotesk text-base font-semibold text-white"
+                      >
+                        {phone.display}
+                      </a>
+                    ))}
+                  </div>
+                  {office.note && (
+                    <p className="mt-4 text-sm text-hero-muted">{office.note}</p>
+                  )}
+                </article>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal delay={0.15}>
+            <p className="mt-10 text-sm leading-relaxed text-hero-muted">
+              Career enquiries are handled through the careers page on{" "}
+              <a
+                href="https://www.somyatrans.com"
+                target="_blank"
+                rel="noreferrer"
+                className="link-underline font-semibold text-white"
+              >
+                somyatrans.com
+              </a>
+              .
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
     </div>
   );
 }

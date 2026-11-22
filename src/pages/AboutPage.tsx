@@ -97,7 +97,7 @@ export default function AboutPage() {
     <div className="bg-bg text-ink">
       {/* ------------------------------- Hero ------------------------------ */}
       <div className="mx-auto max-w-[1440px] px-5 pt-32 pb-20 md:px-10 md:pb-28">
-        <SectionTag index="13" label="About us" />
+        <SectionTag label="About us" />
 
         <div className="mt-8 grid gap-12 lg:grid-cols-[1.4fr_1fr] lg:gap-20">
           <div>
@@ -167,7 +167,7 @@ export default function AboutPage() {
             </div>
 
             <div>
-              <SectionTag index="13" label="Our story" light />
+              <SectionTag label="Our story" light />
               <Reveal delay={0.1}>
                 <h2 className="mt-6 font-display text-4xl leading-[1.05] font-medium text-balance md:text-5xl">
                   From one language pair to{" "}
@@ -244,7 +244,7 @@ export default function AboutPage() {
           <div className="grid gap-12 lg:grid-cols-[1fr_2fr] lg:gap-20">
             <div className="lg:sticky lg:top-28 lg:self-start">
               <p className="font-grotesk text-[11px] font-bold tracking-[0.28em] text-muted uppercase">
-                13 — Milestones
+                Milestones
               </p>
               <h2 className="mt-6 font-display text-4xl leading-[1.05] font-medium text-balance md:text-5xl">
                 <WordReveal text="The road so far." accentWords={["far."]} />
@@ -338,7 +338,7 @@ export default function AboutPage() {
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div>
               <p className="font-grotesk text-[11px] font-bold tracking-[0.28em] text-muted uppercase">
-                13 — Values
+                Values
               </p>
               <h2 className="mt-6 font-display text-4xl leading-[1.05] font-medium text-balance md:text-5xl">
                 <WordReveal text="What we stand for." accentWords={["for."]} />

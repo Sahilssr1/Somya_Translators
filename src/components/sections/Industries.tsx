@@ -45,7 +45,7 @@ export default function Industries() {
   return (
     <section id="industries" aria-label="Industries" className="bg-bg text-ink">
       <div className="mx-auto w-full max-w-[1440px] px-5 py-24 md:px-10 md:py-32">
-        <SectionTag index="03" label="Where we work" />
+        <SectionTag label="Where we work" />
 
         <div className="mt-8 flex flex-wrap items-end justify-between gap-6">
           <h2 className="max-w-3xl font-display text-[clamp(2.1rem,5vw,4.25rem)] leading-[1.05] font-medium tracking-[-0.01em]">

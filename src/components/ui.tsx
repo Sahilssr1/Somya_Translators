@@ -88,11 +88,9 @@ export function WordReveal({
 /* --------------------------- Section eyebrow ---------------------------- */
 
 export function SectionTag({
-  index,
   label,
   light = false,
 }: {
-  index: string;
   label: string;
   light?: boolean;
 }) {
@@ -103,11 +101,6 @@ export function SectionTag({
           light ? "text-hero-muted" : "text-muted"
         }`}
       >
-        <span
-          className={`font-grotesk ${light ? "text-[#FF5F57]" : "text-accent"}`}
-        >
-          {index}
-        </span>
         <span className={`h-px w-10 ${light ? "bg-white/40" : "bg-line-strong"}`} aria-hidden="true" />
         <span>{label}</span>
       </div>

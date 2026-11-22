@@ -12,7 +12,7 @@ export default function Faq() {
         <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
           {/* ---- Sticky left column ---- */}
           <div className="lg:sticky lg:top-28 lg:self-start">
-            <SectionTag index="10" label="Questions" />
+            <SectionTag label="Questions" />
             <h2 className="mt-8 font-display text-4xl leading-[1.05] font-medium text-balance sm:text-5xl lg:text-6xl">
               <WordReveal text="Asked, answered." accentWords={["answered."]} />
             </h2>

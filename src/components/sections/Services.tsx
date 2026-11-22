@@ -54,7 +54,7 @@ export default function Services() {
       className="overflow-hidden bg-[#080D16] text-white"
     >
       <div className="mx-auto w-full max-w-[1440px] px-5 py-24 md:px-10 md:py-32">
-        <SectionTag index="02" label="What we do" light />
+        <SectionTag label="What we do" light />
 
         <Reveal>
           <h2 className="mt-8 max-w-4xl font-display text-[clamp(2.1rem,5vw,4.25rem)] leading-[1.05] font-medium tracking-[-0.01em]">
