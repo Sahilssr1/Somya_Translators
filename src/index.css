@@ -1,0 +1,221 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* ------------------------------------------------------------------
+   Somya Translators — design tokens
+   Two intentionally designed environments (not an inversion).
+   Dark:  bg #080D16 / surface #101827 / ink #FFFFFF / muted #A6B0C0
+          accent #55D6C2 / accent-2 #6C8CFF
+   Light: bg #F7F8FA / surface #FFFFFF / ink #111827 / muted #667085
+          accent #087F8C / accent-2 #405FEA
+------------------------------------------------------------------- */
+
+:root {
+  --bg: #f7f8fa;
+  --surface: #ffffff;
+  --surface-2: #eef0f4;
+  --ink: #111827;
+  --muted: #667085;
+  --faint: #98a2b3;
+  --line: rgba(17, 24, 39, 0.12);
+  --line-strong: rgba(17, 24, 39, 0.22);
+  --accent: #087f8c;
+  --accent-2: #405fea;
+  --accent-soft: rgba(8, 127, 140, 0.1);
+  --accent-2-soft: rgba(64, 95, 234, 0.09);
+  --on-accent: #ffffff;
+  --overlay: rgba(247, 248, 250, 0.82);
+  --shadow: 0 24px 60px -24px rgba(17, 24, 39, 0.25);
+  --hero-ink: #ffffff;
+  --hero-muted: rgba(255, 255, 255, 0.72);
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --bg: #080d16;
+  --surface: #101827;
+  --surface-2: #16202f;
+  --ink: #ffffff;
+  --muted: #a6b0c0;
+  --faint: #6b7688;
+  --line: rgba(255, 255, 255, 0.1);
+  --line-strong: rgba(255, 255, 255, 0.22);
+  --accent: #55d6c2;
+  --accent-2: #6c8cff;
+  --accent-soft: rgba(85, 214, 194, 0.12);
+  --accent-2-soft: rgba(108, 140, 255, 0.12);
+  --on-accent: #06231f;
+  --overlay: rgba(8, 13, 22, 0.82);
+  --shadow: 0 24px 60px -24px rgba(0, 0, 0, 0.6);
+  --hero-ink: #ffffff;
+  --hero-muted: rgba(255, 255, 255, 0.72);
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-2-soft: var(--accent-2-soft);
+  --color-on-accent: var(--on-accent);
+  --color-overlay: var(--overlay);
+  --color-hero-ink: var(--hero-ink);
+  --color-hero-muted: var(--hero-muted);
+
+  --font-display: "Fraunces", "Georgia", serif;
+  --font-sans: "Manrope", system-ui, sans-serif;
+  --font-grotesk: "Space Grotesk", "Manrope", sans-serif;
+
+  --shadow-lift: var(--shadow);
+
+  --animate-marquee: marquee 42s linear infinite;
+  --animate-marquee-slow: marquee 68s linear infinite;
+  --animate-float-y: float-y 7s ease-in-out infinite;
+  --animate-spin-slow: spin 14s linear infinite;
+  --animate-scroll-dot: scroll-dot 2.2s ease-in-out infinite;
+  --animate-pulse-ring: pulse-ring 2.6s ease-out infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes float-y {
+  0%, 100% { transform: translateY(-6px); }
+  50% { transform: translateY(8px); }
+}
+
+@keyframes scroll-dot {
+  0% { transform: translateY(0); opacity: 0; }
+  25% { opacity: 1; }
+  100% { transform: translateY(14px); opacity: 0; }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.6); opacity: 0.8; }
+  100% { transform: scale(2.1); opacity: 0; }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+/* Thin editorial scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--line-strong);
+  border-radius: 8px;
+}
+
+/* Display type helpers */
+.font-display {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+}
+
+.text-outline {
+  -webkit-text-stroke: 1px var(--line-strong);
+  color: transparent;
+}
+.text-outline-hero {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.35);
+  color: transparent;
+}
+
+/* Animated underline for editorial links */
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: background-size 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  padding-bottom: 2px;
+}
+.link-underline:hover,
+.group:hover .link-underline {
+  background-size: 100% 1px;
+}
+
+/* Hide scrollbars for horizontal scroll rails */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Film-grain overlay for cinematic sections */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.07;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+}
+
+/* Vertical writing for editorial side labels */
+.vertical-label {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
