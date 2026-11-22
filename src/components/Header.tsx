@@ -14,12 +14,11 @@ function Wordmark({ light }: { light?: boolean }) {
       <img src="/logo.png" alt="Somya Translators logo" className="h-9 w-auto" />
       <span className="flex flex-col gap-1 leading-none sm:flex-row sm:items-baseline sm:gap-2.5">
         <span
-          className={`flex items-center gap-2 font-grotesk text-[22px] font-bold tracking-[0.18em] leading-none ${
+          className={`font-grotesk text-[22px] font-bold tracking-[0.18em] leading-none ${
             light ? "text-white" : "text-ink"
           }`}
         >
           SOMYA
-          <span className="inline-block h-2 w-2 rounded-full bg-accent transition-transform duration-300 group-hover:scale-150" />
         </span>
         <span
           className={`text-[9px] font-bold tracking-[0.32em] sm:text-[10px] ${
