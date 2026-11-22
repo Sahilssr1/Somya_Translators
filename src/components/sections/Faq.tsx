@@ -8,7 +8,7 @@ export default function Faq() {
 
   return (
     <section id="faq" aria-label="Frequently asked questions" className="bg-surface text-ink">
-      <div className="mx-auto max-w-[1440px] px-5 py-24 md:px-10 md:py-32">
+      <div className="mx-auto max-w-[1440px] px-5 pt-14 pb-10 md:px-10 md:pt-16 md:pb-12">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
           {/* ---- Sticky left column ---- */}
           <div className="lg:sticky lg:top-28 lg:self-start">

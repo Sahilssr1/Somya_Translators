@@ -5,7 +5,7 @@ import { LazyImage, PrimaryButton, Reveal, SectionTag, WordReveal } from "../ui"
 export default function Contact() {
   return (
     <section id="contact" aria-label="Contact" className="relative overflow-hidden bg-[#080D16] text-white">
-      <div className="grain relative mx-auto max-w-[1440px] px-5 py-24 md:px-10 md:py-32">
+      <div className="grain relative mx-auto max-w-[1440px] px-5 py-14 md:px-10 md:py-16">
         <SectionTag label="Contact" light />
 
         <h2 className="mt-8 max-w-4xl font-display text-5xl leading-[1.02] font-medium text-balance sm:text-6xl lg:text-7xl">

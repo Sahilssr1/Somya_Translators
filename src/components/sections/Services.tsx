@@ -53,7 +53,7 @@ export default function Services() {
       aria-label="Services"
       className="overflow-hidden bg-[#080D16] text-white"
     >
-      <div className="mx-auto w-full max-w-[1440px] px-5 py-24 md:px-10 md:py-32">
+      <div className="mx-auto w-full max-w-[1440px] px-5 py-14 md:px-10 md:py-16">
         <SectionTag label="What we do" light />
 
         <Reveal>

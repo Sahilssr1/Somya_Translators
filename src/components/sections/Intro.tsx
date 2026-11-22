@@ -11,7 +11,7 @@ const statText = (label: string) => {
 export default function Intro() {
   return (
     <section id="about" aria-label="About Somya Translators" className="bg-bg text-ink">
-      <div className="mx-auto w-full max-w-[1440px] px-5 py-24 md:px-10 md:py-32">
+      <div className="mx-auto w-full max-w-[1440px] px-5 py-14 md:px-10 md:py-16">
         <SectionTag label="Who we are" />
 
         <h2 className="mt-8 max-w-4xl font-display text-[clamp(2.1rem,5vw,4.25rem)] leading-[1.05] font-medium tracking-[-0.01em]">

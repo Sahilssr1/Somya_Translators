@@ -6,7 +6,7 @@ import { LazyImage, Reveal, SectionTag, WordReveal } from "../ui";
 export default function Quality() {
   return (
     <section id="quality" aria-label="Quality and trust" className="relative overflow-hidden bg-[#080D16] text-white">
-      <div className="grain relative mx-auto max-w-[1440px] px-5 py-24 md:px-10 md:py-32">
+      <div className="grain relative mx-auto max-w-[1440px] px-5 pt-14 pb-10 md:px-10 md:pt-16 md:pb-12">
         <SectionTag label="Quality & trust" light />
 
         <div className="mt-10 grid gap-14 lg:grid-cols-2 lg:gap-20">

@@ -33,7 +33,7 @@ export default function Testimonials() {
       aria-label="Client voices"
       className="relative overflow-hidden bg-[#080D16] text-white"
     >
-      <div className="grain relative mx-auto max-w-[1440px] px-5 py-24 md:px-10 md:py-32">
+      <div className="grain relative mx-auto max-w-[1440px] px-5 py-14 md:px-10 md:py-16">
         <SectionTag label="Client voices" light />
 
         <div

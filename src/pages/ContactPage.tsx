@@ -299,7 +299,7 @@ export default function ContactPage() {
       </div>
 
       {/* ------------------------- Form + info rail ------------------------ */}
-      <div className="mx-auto max-w-[1440px] px-5 pt-10 pb-20 md:px-10 md:pt-12 md:pb-24">
+      <div className="mx-auto max-w-[1440px] px-5 pt-10 pb-14 md:px-10 md:pt-12 md:pb-16">
         <div className="grid gap-14 lg:grid-cols-[1.25fr_1fr] lg:gap-20">
           {/* ---- Form / success ---- */}
           <div>
@@ -705,7 +705,7 @@ export default function ContactPage() {
       </div>
       {/* ------------------------------ Offices ---------------------------- */}
       <section aria-label="Our offices" className="bg-[#080D16] text-white">
-        <div className="mx-auto max-w-[1440px] px-5 py-20 md:px-10 md:py-28">
+        <div className="mx-auto max-w-[1440px] px-5 py-14 md:px-10 md:py-16">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div>
               <SectionTag label="Offices" light />

@@ -5,7 +5,7 @@ import { Reveal, SectionTag, WordReveal } from "../ui";
 export default function WhyUs() {
   return (
     <section id="why-us" aria-label="Why Somya" className="bg-bg text-ink">
-      <div className="mx-auto max-w-[1440px] px-5 py-24 md:px-10 md:py-32">
+      <div className="mx-auto max-w-[1440px] px-5 pt-14 pb-10 md:px-10 md:pt-16 md:pb-12">
         <SectionTag label="Why Somya" />
 
         <div className="mt-8 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">

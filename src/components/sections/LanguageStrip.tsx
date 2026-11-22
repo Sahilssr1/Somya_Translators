@@ -7,7 +7,7 @@ export default function LanguageStrip() {
   return (
     <div
       aria-hidden="true"
-      className="overflow-hidden border-b border-line bg-bg py-7 md:py-9"
+      className="overflow-hidden border-b border-line bg-bg py-5 md:py-6"
     >
       <div className="text-outline-strip flex w-max animate-marquee-slow font-display text-[15vw] leading-none whitespace-nowrap md:text-[10vw]">
         <span className="pr-10">

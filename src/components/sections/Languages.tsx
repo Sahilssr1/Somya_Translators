@@ -118,7 +118,7 @@ export default function Languages() {
 
   return (
     <section id="languages" aria-label="Languages" className="relative overflow-hidden bg-[#080D16] text-white">
-      <div className="grain relative mx-auto max-w-[1440px] px-5 py-24 md:px-10 md:py-32">
+      <div className="grain relative mx-auto max-w-[1440px] px-5 pt-14 pb-10 md:px-10 md:pt-16 md:pb-12">
         <SectionTag label="Languages" light />
 
         <div className="mt-8 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">

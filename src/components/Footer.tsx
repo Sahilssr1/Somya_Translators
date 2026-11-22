@@ -6,7 +6,7 @@ import { Reveal } from "./ui";
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden bg-[#080D16] text-white">
-      <div className="mx-auto max-w-[1440px] px-5 pt-20 pb-10 md:px-10">
+      <div className="mx-auto max-w-[1440px] px-5 pt-14 pb-10 md:px-10">
         <Reveal>
           <div className="flex flex-wrap items-end justify-between gap-8 border-b border-white/10 pb-12">
             <div>

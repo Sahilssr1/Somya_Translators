@@ -96,7 +96,7 @@ export default function AboutPage() {
   return (
     <div className="bg-bg text-ink">
       {/* ------------------------------- Hero ------------------------------ */}
-      <div className="mx-auto max-w-[1440px] px-5 pt-32 pb-20 md:px-10 md:pb-28">
+      <div className="mx-auto max-w-[1440px] px-5 pt-32 pb-12 md:px-10 md:pb-14">
         <SectionTag label="About us" />
 
         <div className="mt-8 grid gap-12 lg:grid-cols-[1.4fr_1fr] lg:gap-20">
@@ -148,7 +148,7 @@ export default function AboutPage() {
 
       {/* --------------------------- Story (dark) -------------------------- */}
       <section aria-label="Our story" className="bg-[#080D16] text-white">
-        <div className="mx-auto max-w-[1440px] px-5 py-20 md:px-10 md:py-28">
+        <div className="mx-auto max-w-[1440px] px-5 py-14 md:px-10 md:py-16">
           <div className="grid gap-14 lg:grid-cols-[1fr_1.15fr] lg:gap-20">
             <div className="relative">
               <LazyImage
@@ -216,7 +216,7 @@ export default function AboutPage() {
 
       {/* --------------------------- Pull-line band ------------------------ */}
       <section aria-label="Our tagline" className="border-b border-line">
-        <div className="mx-auto max-w-[1440px] px-5 py-20 text-center md:px-10 md:py-28">
+        <div className="mx-auto max-w-[1440px] px-5 py-14 text-center md:px-10 md:py-16">
           <Reveal>
             <p className="font-grotesk text-[11px] font-bold tracking-[0.35em] text-faint uppercase">
               The idea behind everything we do
@@ -240,7 +240,7 @@ export default function AboutPage() {
 
       {/* ------------------------------ Timeline --------------------------- */}
       <section aria-label="Milestones" className="bg-surface-2/60">
-        <div className="mx-auto max-w-[1440px] px-5 py-20 md:px-10 md:py-28">
+        <div className="mx-auto max-w-[1440px] px-5 py-14 md:px-10 md:py-16">
           <div className="grid gap-12 lg:grid-cols-[1fr_2fr] lg:gap-20">
             <div className="lg:sticky lg:top-28 lg:self-start">
               <p className="font-grotesk text-[11px] font-bold tracking-[0.28em] text-muted uppercase">
@@ -293,10 +293,10 @@ export default function AboutPage() {
 
       {/* --------------------------- Vision & mission ---------------------- */}
       <section aria-label="Vision and mission">
-        <div className="mx-auto max-w-[1440px] px-5 py-20 md:px-10 md:py-28">
+        <div className="mx-auto max-w-[1440px] px-5 py-10 md:px-10 md:py-12">
           <div className="grid gap-6 md:grid-cols-2 md:gap-8">
             <Reveal>
-              <article className="flex h-full flex-col rounded-2xl border border-line bg-surface p-8 shadow-lift md:p-10">
+              <article className="flex h-full flex-col rounded-2xl border border-line bg-surface p-6 shadow-lift md:p-8">
                 <p className="font-grotesk text-[11px] font-bold tracking-[0.28em] text-accent uppercase">
                   Our vision
                 </p>
@@ -334,7 +334,7 @@ export default function AboutPage() {
 
       {/* ------------------------------ Values ----------------------------- */}
       <section aria-label="What we stand for" className="border-t border-line">
-        <div className="mx-auto max-w-[1440px] px-5 py-20 md:px-10 md:py-28">
+        <div className="mx-auto max-w-[1440px] px-5 py-14 md:px-10 md:py-16">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div>
               <p className="font-grotesk text-[11px] font-bold tracking-[0.28em] text-muted uppercase">
@@ -375,7 +375,7 @@ export default function AboutPage() {
 
       {/* --------------------------- Stats (dark) -------------------------- */}
       <section aria-label="Somya Translators in numbers" className="bg-[#080D16] text-white">
-        <div className="mx-auto max-w-[1440px] px-5 py-20 md:px-10 md:py-28">
+        <div className="mx-auto max-w-[1440px] px-5 py-14 md:px-10 md:py-16">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <h2 className="font-display text-4xl leading-[1.05] font-medium text-balance md:text-5xl">
               <WordReveal text="The practice, in numbers." accentWords={["numbers."]} />
@@ -408,9 +408,9 @@ export default function AboutPage() {
 
       {/* -------------------------------- CTA ------------------------------ */}
       <section aria-label="Work with us">
-        <div className="mx-auto max-w-[1440px] px-5 py-20 md:px-10 md:py-28">
+        <div className="mx-auto max-w-[1440px] px-5 py-14 md:px-10 md:py-16">
           <Reveal>
-            <div className="rounded-2xl border border-line bg-surface px-6 py-14 text-center shadow-lift md:px-12 md:py-20">
+            <div className="rounded-2xl border border-line bg-surface px-6 py-10 text-center shadow-lift md:px-12 md:py-12">
               <p className="font-grotesk text-[11px] font-bold tracking-[0.35em] text-faint uppercase">
                 Ready when you are
               </p>

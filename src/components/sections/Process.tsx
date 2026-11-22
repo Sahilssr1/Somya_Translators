@@ -5,7 +5,7 @@ import { PrimaryButton, Reveal, SectionTag, WordReveal } from "../ui";
 export default function Process() {
   return (
     <section id="process" aria-label="How it works" className="bg-bg text-ink">
-      <div className="mx-auto max-w-[1440px] px-5 py-24 md:px-10 md:py-32">
+      <div className="mx-auto max-w-[1440px] px-5 py-14 md:px-10 md:py-16">
         <SectionTag label="How it works" />
 
         <div className="mt-8 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
