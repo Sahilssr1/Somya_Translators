@@ -37,9 +37,9 @@ export const COMPANY = {
     },
   ],
   socials: [
-    { label: "LinkedIn", href: "https://www.linkedin.com/company/somya-translators" },
-    { label: "Facebook", href: "https://www.facebook.com/somyatranslators" },
-    { label: "Instagram", href: "https://www.instagram.com/somyatranslators" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/company/somya-translators-pvt-ltd" },
+    { label: "Facebook", href: "https://www.facebook.com/somyatrans" },
+    { label: "Instagram", href: "https://www.instagram.com/somyatrans" },
     { label: "X", href: "https://x.com/somyatrans" },
   ],
 };
@@ -565,7 +565,7 @@ export const NAV_LINKS = [
   { label: "Services", href: "/#services", mega: "services" as const },
   { label: "Industries", href: "/#industries", mega: "industries" as const },
   { label: "Languages", href: "/#languages", mega: "languages" as const },
-  { label: "About", href: "/#about" },
+  { label: "About", href: "/about" },
   { label: "Insights", href: "/#insights" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Contact", href: "/contact" },
 ];

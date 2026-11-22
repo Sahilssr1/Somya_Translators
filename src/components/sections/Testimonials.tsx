@@ -48,7 +48,7 @@ export default function Testimonials() {
             <div>
               <span
                 aria-hidden="true"
-                className="font-display text-[7rem] leading-[0.6] text-[#55D6C2] select-none md:text-[10rem]"
+                className="font-display text-[7rem] leading-[0.6] text-[#FF5F57] select-none md:text-[10rem]"
               >
                 &ldquo;
               </span>
@@ -74,7 +74,7 @@ export default function Testimonials() {
                     type="button"
                     onClick={() => go(-1)}
                     aria-label="Previous testimonial"
-                    className="flex h-12 w-12 items-center justify-center rounded-full border border-white/25 text-white transition-all duration-300 hover:border-[#55D6C2] hover:bg-[#55D6C2] hover:text-[#06231F]"
+                    className="flex h-12 w-12 items-center justify-center rounded-full border border-white/25 text-white transition-all duration-300 hover:border-[#FF5F57] hover:bg-[#FF5F57] hover:text-[#ffffff]"
                   >
                     <span aria-hidden="true">←</span>
                   </button>
@@ -82,7 +82,7 @@ export default function Testimonials() {
                     type="button"
                     onClick={() => go(1)}
                     aria-label="Next testimonial"
-                    className="flex h-12 w-12 items-center justify-center rounded-full border border-white/25 text-white transition-all duration-300 hover:border-[#55D6C2] hover:bg-[#55D6C2] hover:text-[#06231F]"
+                    className="flex h-12 w-12 items-center justify-center rounded-full border border-white/25 text-white transition-all duration-300 hover:border-[#FF5F57] hover:bg-[#FF5F57] hover:text-[#ffffff]"
                   >
                     <span aria-hidden="true">→</span>
                   </button>
@@ -101,7 +101,7 @@ export default function Testimonials() {
                       aria-label={`Testimonial from ${t.name}`}
                       onClick={() => setIndex(i)}
                       className={`h-2 rounded-full transition-all duration-500 ${
-                        i === index ? "w-8 bg-[#55D6C2]" : "w-2 bg-white/30 hover:bg-white/60"
+                        i === index ? "w-8 bg-[#FF5F57]" : "w-2 bg-white/30 hover:bg-white/60"
                       }`}
                     />
                   ))}

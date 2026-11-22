@@ -36,13 +36,13 @@ function WorldMap({ activeId, onSelect }: { activeId: string; onSelect: (id: str
     >
       <defs>
         <radialGradient id="mapGlow" cx="50%" cy="42%" r="65%">
-          <stop offset="0%" stopColor="#55D6C2" stopOpacity="0.10" />
-          <stop offset="60%" stopColor="#55D6C2" stopOpacity="0.03" />
-          <stop offset="100%" stopColor="#55D6C2" stopOpacity="0" />
+          <stop offset="0%" stopColor="#FF5F57" stopOpacity="0.10" />
+          <stop offset="60%" stopColor="#FF5F57" stopOpacity="0.03" />
+          <stop offset="100%" stopColor="#FF5F57" stopOpacity="0" />
         </radialGradient>
         <radialGradient id="indiaGlow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="#55D6C2" stopOpacity="0.35" />
-          <stop offset="100%" stopColor="#55D6C2" stopOpacity="0" />
+          <stop offset="0%" stopColor="#FF5F57" stopOpacity="0.35" />
+          <stop offset="100%" stopColor="#FF5F57" stopOpacity="0" />
         </radialGradient>
       </defs>
 
@@ -76,10 +76,10 @@ function WorldMap({ activeId, onSelect }: { activeId: string; onSelect: (id: str
             onClick={() => onSelect(id)}
             initial={false}
             animate={{
-              fill: isActive ? "rgba(85, 214, 194, 0.32)" : "rgba(255, 255, 255, 0.12)",
-              stroke: isActive ? "#55D6C2" : "rgba(255, 255, 255, 0.55)",
+              fill: isActive ? "rgba(255, 95, 87, 0.32)" : "rgba(255, 255, 255, 0.12)",
+              stroke: isActive ? "#FF5F57" : "rgba(255, 255, 255, 0.55)",
             }}
-            whileHover={{ fill: "rgba(85, 214, 194, 0.22)" }}
+            whileHover={{ fill: "rgba(255, 95, 87, 0.22)" }}
             transition={{ duration: 0.5 }}
           >
             <title>{REGIONS.find((r) => r.id === id)?.label}</title>
@@ -103,7 +103,7 @@ function WorldMap({ activeId, onSelect }: { activeId: string; onSelect: (id: str
               strokeWidth={isActive ? 1.4 : 1}
               strokeDasharray="4 7"
               className={`animate-dash-flow pointer-events-none transition-opacity duration-500 ${
-                isActive ? "stroke-[#55D6C2] opacity-90" : "stroke-white/25 opacity-50"
+                isActive ? "stroke-[#FF5F57] opacity-90" : "stroke-white/25 opacity-50"
               }`}
             />
           );
@@ -140,7 +140,7 @@ export default function Languages() {
 
             {/* Map caption */}
             <div aria-hidden="true" className="pointer-events-none absolute top-4 left-5 hidden items-center gap-3 sm:flex">
-              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#55D6C2]" />
+              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#FF5F57]" />
               <span className="font-grotesk text-[10px] font-semibold tracking-[0.28em] text-white/50 uppercase">
                 Global coverage · 176 countries · Click a region
               </span>
@@ -157,22 +157,22 @@ export default function Languages() {
                   onClick={() => setActiveId(region.id)}
                   aria-pressed={isActive}
                   aria-label={`Show languages for ${region.label}`}
-                  className="group absolute z-10 -translate-x-1/2 -translate-y-1/2 rounded-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#55D6C2]"
+                  className="group absolute z-10 -translate-x-1/2 -translate-y-1/2 rounded-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FF5F57]"
                   style={{ left: pos.left, top: pos.top }}
                 >
                   <span className="relative flex h-8 w-8 items-center justify-center">
                     {isActive && (
                       <span
                         aria-hidden="true"
-                        className="absolute inset-0 animate-pulse-ring rounded-full border border-[#55D6C2] [transform-box:fill-box] [transform-origin:center]"
+                        className="absolute inset-0 animate-pulse-ring rounded-full border border-[#FF5F57] [transform-box:fill-box] [transform-origin:center]"
                       />
                     )}
                     <span
                       aria-hidden="true"
                       className={`h-3 w-3 rounded-full transition-all duration-300 ${
                         isActive
-                          ? "bg-[#55D6C2] shadow-[0_0_18px_2px_rgba(85,214,194,0.7)]"
-                          : "bg-white/70 group-hover:bg-[#55D6C2] group-hover:scale-125"
+                          ? "bg-[#FF5F57] shadow-[0_0_18px_2px_rgba(255, 95, 87, 0.7)]"
+                          : "bg-white/70 group-hover:bg-[#FF5F57] group-hover:scale-125"
                       }`}
                     />
                   </span>
@@ -180,7 +180,7 @@ export default function Languages() {
                     aria-hidden="true"
                     className={`absolute left-1/2 top-full mt-1 -translate-x-1/2 rounded-full border px-2.5 py-1 font-grotesk text-[10px] font-semibold tracking-[0.14em] whitespace-nowrap uppercase transition-all duration-300 ${
                       isActive
-                        ? "border-[#55D6C2]/50 bg-[#080D16] text-[#55D6C2] opacity-100"
+                        ? "border-[#FF5F57]/50 bg-[#080D16] text-[#FF5F57] opacity-100"
                         : "border-white/10 bg-[#080D16]/80 text-white/80 opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100"
                     }`}
                   >
@@ -208,7 +208,7 @@ export default function Languages() {
                 aria-pressed={isActive}
                 className={`shrink-0 rounded-full border px-5 py-2.5 font-grotesk text-xs font-semibold tracking-[0.12em] uppercase transition-all duration-300 ${
                   isActive
-                    ? "border-[#55D6C2] bg-[#55D6C2] text-[#06231F]"
+                    ? "border-[#FF5F57] bg-[#FF5F57] text-[#ffffff]"
                     : "border-white/15 text-white/80 hover:border-white/40 hover:text-white"
                 }`}
               >
@@ -245,13 +245,13 @@ export default function Languages() {
                   className="group grid grid-cols-[1fr_auto] items-center gap-x-6 gap-y-2 py-4 transition-colors duration-300 hover:bg-white/[0.03] md:grid-cols-[minmax(0,2fr)_minmax(0,2fr)_minmax(0,3fr)] md:py-5"
                 >
                   <div className="flex items-baseline gap-3">
-                    <span className="font-grotesk text-[11px] text-[#55D6C2]">
+                    <span className="font-grotesk text-[11px] text-[#FF5F57]">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <span className="font-display text-xl font-medium md:text-2xl">{lang.name}</span>
                   </div>
                   <div className="text-right md:text-left">
-                    <span className="font-display text-2xl text-[#55D6C2] md:text-3xl" lang="und">
+                    <span className="font-display text-2xl text-[#FF5F57] md:text-3xl" lang="und">
                       {lang.native}
                     </span>
                   </div>

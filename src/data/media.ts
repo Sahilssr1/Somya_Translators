@@ -14,7 +14,7 @@
  */
 
 const PLACEHOLDER =
-  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'%3E%3Crect width='1200' height='800' fill='%23101827'/%3E%3Ctext x='50%25' y='50%25' fill='%2355D6C2' font-family='sans-serif' font-size='42' text-anchor='middle'%3ESomya Translators%3C/text%3E%3C/svg%3E";
+  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'%3E%3Crect width='1200' height='800' fill='%23101827'/%3E%3Ctext x='50%25' y='50%25' fill='%23FF5F57' font-family='sans-serif' font-size='42' text-anchor='middle'%3ESomya Translators%3C/text%3E%3C/svg%3E";
 
 const U = (id: string, w = 1600) =>
   `https://images.unsplash.com/${id}?q=80&w=${w}&auto=format&fit=crop`;

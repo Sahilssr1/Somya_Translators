@@ -6,6 +6,8 @@ import Home from "./pages/Home";
 import { ThemeProvider } from "./theme/ThemeContext";
 
 const QuotePage = lazy(() => import("./pages/QuotePage"));
+const AboutPage = lazy(() => import("./pages/AboutPage"));
+const ContactPage = lazy(() => import("./pages/ContactPage"));
 
 /** Scrolls to top on route change, or to the anchored section on hash change. */
 function ScrollManager() {
@@ -51,6 +53,8 @@ export default function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/quote" element={<QuotePage />} />
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="/contact" element={<ContactPage />} />
                 <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
             </Suspense>

@@ -23,7 +23,7 @@ export default function Contact() {
           <div>
             <Reveal>
               <div className="border-t border-white/10 py-7">
-                <h3 className="font-grotesk text-[11px] font-bold tracking-[0.28em] text-[#55D6C2] uppercase">
+                <h3 className="font-grotesk text-[11px] font-bold tracking-[0.28em] text-[#FF5F57] uppercase">
                   Email
                 </h3>
                 <a
@@ -37,7 +37,7 @@ export default function Contact() {
 
             <Reveal delay={0.05}>
               <div className="border-t border-white/10 py-7">
-                <h3 className="font-grotesk text-[11px] font-bold tracking-[0.28em] text-[#55D6C2] uppercase">
+                <h3 className="font-grotesk text-[11px] font-bold tracking-[0.28em] text-[#FF5F57] uppercase">
                   Phone
                 </h3>
                 <ul className="mt-3 flex flex-col gap-2">
@@ -57,7 +57,7 @@ export default function Contact() {
 
             <Reveal delay={0.1}>
               <div className="border-t border-white/10 py-7">
-                <h3 className="font-grotesk text-[11px] font-bold tracking-[0.28em] text-[#55D6C2] uppercase">
+                <h3 className="font-grotesk text-[11px] font-bold tracking-[0.28em] text-[#FF5F57] uppercase">
                   Offices
                 </h3>
                 <ul className="mt-5 flex flex-col gap-6">
@@ -83,7 +83,7 @@ export default function Contact() {
 
             <Reveal delay={0.15}>
               <div className="border-t border-b border-white/10 py-7">
-                <h3 className="font-grotesk text-[11px] font-bold tracking-[0.28em] text-[#55D6C2] uppercase">
+                <h3 className="font-grotesk text-[11px] font-bold tracking-[0.28em] text-[#FF5F57] uppercase">
                   Follow
                 </h3>
                 <ul className="mt-4 flex flex-wrap gap-3">
@@ -93,7 +93,7 @@ export default function Contact() {
                         href={social.href}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-block rounded-full border border-white/20 px-5 py-2 font-grotesk text-xs font-semibold tracking-[0.14em] uppercase transition-all duration-300 hover:border-[#55D6C2] hover:text-[#55D6C2]"
+                        className="inline-block rounded-full border border-white/20 px-5 py-2 font-grotesk text-xs font-semibold tracking-[0.14em] uppercase transition-all duration-300 hover:border-[#FF5F57] hover:text-[#FF5F57]"
                       >
                         {social.label} ↗
                       </a>
@@ -136,9 +136,9 @@ export default function Contact() {
         <Reveal className="mt-20">
           <p className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 border-y border-white/10 py-6 text-center font-grotesk text-xs font-bold tracking-[0.22em] text-[#A6B0C0] uppercase md:text-sm">
             <span>Quote within 30 minutes</span>
-            <span aria-hidden="true" className="text-[#55D6C2]">·</span>
+            <span aria-hidden="true" className="text-[#FF5F57]">·</span>
             <span>24/7 support</span>
-            <span aria-hidden="true" className="text-[#55D6C2]">·</span>
+            <span aria-hidden="true" className="text-[#FF5F57]">·</span>
             <span>Same-day options</span>
           </p>
         </Reveal>

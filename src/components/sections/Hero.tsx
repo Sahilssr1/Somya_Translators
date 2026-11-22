@@ -15,10 +15,11 @@ const HEADLINE_WORDS: { text: string; accent?: boolean; underline?: boolean }[] 
 ];
 
 const FLOATING_LABELS = [
-  { text: "हिन्दी", className: "right-[7%] top-[19%]", delay: "0s" },
-  { text: "日本語", className: "right-[21%] top-[35%]", delay: "1.4s" },
-  { text: "العربية", className: "right-[6%] top-[51%]", delay: "0.7s" },
-  { text: "Español", className: "right-[17%] top-[65%]", delay: "2s" },
+  { text: "Hello", className: "right-[7%] top-[16%]", delay: "0s" },
+  { text: "नमस्ते", className: "right-[20%] top-[30%]", delay: "1.4s" },
+  { text: "Hola", className: "right-[6%] top-[44%]", delay: "0.7s" },
+  { text: "Bonjour", className: "right-[18%] top-[58%]", delay: "2s" },
+  { text: "こんにちは", className: "right-[8%] top-[72%]", delay: "1.1s" },
 ];
 
 export default function Hero() {
@@ -104,9 +105,9 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      {/* ---- Huge slow-moving outline typography, barely there ---- */}
+      {/* ---- Huge slow-moving outline typography ---- */}
       <div
-        className="pointer-events-none absolute inset-x-0 top-[11%] overflow-hidden opacity-[0.14]"
+        className="pointer-events-none absolute inset-x-0 top-[11%] overflow-hidden opacity-[0.5]"
         aria-hidden="true"
       >
         <div className="text-outline-hero flex w-max animate-marquee-slow font-display text-[16vw] leading-none whitespace-nowrap">
@@ -146,7 +147,7 @@ export default function Hero() {
                 transition={{ duration: 0.8, delay: 0.1, ease: EASE }}
                 className="mb-6 flex items-center gap-4"
               >
-                <span className="h-px w-12 bg-[#55D6C2]" aria-hidden="true" />
+                <span className="h-px w-12 bg-[#FF5F57]" aria-hidden="true" />
                 <p className="font-grotesk text-[11px] font-bold tracking-[0.32em] text-white/80 uppercase md:text-xs">
                   Global Language &amp; Communication Solutions
                 </p>
@@ -161,7 +162,7 @@ export default function Hero() {
                   >
                     <motion.span
                       className={`relative inline-block will-change-transform ${
-                        word.accent ? "text-[#55D6C2] italic" : ""
+                        word.accent ? "text-[#FF5F57] italic" : ""
                       }`}
                       initial={reducedMotion ? false : { y: "110%" }}
                       animate={{ y: 0 }}
@@ -171,7 +172,7 @@ export default function Hero() {
                       {word.underline && (
                         <motion.span
                           aria-hidden="true"
-                          className="absolute -bottom-[0.02em] left-0 h-[0.05em] w-full origin-left bg-[#55D6C2]"
+                          className="absolute -bottom-[0.02em] left-0 h-[0.05em] w-full origin-left bg-[#FF5F57]"
                           initial={reducedMotion ? false : { scaleX: 0 }}
                           animate={{ scaleX: 1 }}
                           transition={{ duration: 0.8, delay: 1.2, ease: EASE }}
@@ -209,23 +210,6 @@ export default function Hero() {
                 </GhostButton>
               </motion.div>
             </div>
-
-            {/* Animated scroll indicator. */}
-            <motion.a
-              href="#about"
-              aria-label="Scroll to the About section"
-              initial={reducedMotion ? false : { opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 1.4 }}
-              className="hidden shrink-0 flex-col items-center gap-3 text-white/60 transition-colors hover:text-white lg:flex"
-            >
-              <span className="font-grotesk text-[10px] tracking-[0.35em] uppercase">
-                Scroll
-              </span>
-              <span className="flex h-10 w-6 justify-center rounded-full border border-white/40 pt-2">
-                <span className="h-2 w-1 animate-scroll-dot rounded-full bg-white" />
-              </span>
-            </motion.a>
           </div>
         </div>
 
@@ -233,11 +217,11 @@ export default function Hero() {
         <div className="border-t border-white/15">
           <div className="mx-auto flex w-full max-w-[1440px] flex-wrap items-center gap-x-6 gap-y-2 px-5 py-4 font-grotesk text-[11px] tracking-[0.22em] text-white/70 uppercase md:px-10 md:text-xs">
             <span>ISO 17100:2015</span>
-            <span aria-hidden="true" className="text-[#55D6C2]">
+            <span aria-hidden="true" className="text-[#FF5F57]">
               ·
             </span>
             <span>200+ languages</span>
-            <span aria-hidden="true" className="text-[#55D6C2]">
+            <span aria-hidden="true" className="text-[#FF5F57]">
               ·
             </span>
             <span>17+ years</span>

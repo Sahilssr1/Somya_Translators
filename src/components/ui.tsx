@@ -104,7 +104,7 @@ export function SectionTag({
         }`}
       >
         <span
-          className={`font-grotesk ${light ? "text-[#55D6C2]" : "text-accent"}`}
+          className={`font-grotesk ${light ? "text-[#FF5F57]" : "text-accent"}`}
         >
           {index}
         </span>

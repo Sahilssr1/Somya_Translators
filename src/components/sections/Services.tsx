@@ -29,7 +29,7 @@ function ServiceImage({ index, className }: { index: number; className: string }
       </AnimatePresence>
       <span
         aria-hidden="true"
-        className="absolute top-4 left-4 bg-[#080D16]/80 px-3 py-1.5 font-grotesk text-[10px] font-bold tracking-[0.28em] text-[#55D6C2] uppercase"
+        className="absolute top-4 left-4 bg-[#080D16]/80 px-3 py-1.5 font-grotesk text-[10px] font-bold tracking-[0.28em] text-[#FF5F57] uppercase"
       >
         {String(index + 1).padStart(2, "0")} / {String(SERVICES.length).padStart(2, "0")}
       </span>
@@ -59,7 +59,7 @@ export default function Services() {
         <Reveal>
           <h2 className="mt-8 max-w-4xl font-display text-[clamp(2.1rem,5vw,4.25rem)] leading-[1.05] font-medium tracking-[-0.01em]">
             Sixteen ways to be{" "}
-            <span className="text-[#55D6C2] italic">understood.</span>
+            <span className="text-[#FF5F57] italic">understood.</span>
           </h2>
         </Reveal>
         <Reveal delay={0.1}>
@@ -89,7 +89,7 @@ export default function Services() {
                   transition={{ duration: 0.4, ease: EASE }}
                   className="mt-6"
                 >
-                  <p className="font-grotesk text-[11px] font-bold tracking-[0.28em] text-[#55D6C2] uppercase">
+                  <p className="font-grotesk text-[11px] font-bold tracking-[0.28em] text-[#FF5F57] uppercase">
                     {activeService.category}
                   </p>
                   <p className="mt-3 font-display text-2xl leading-snug">
@@ -122,7 +122,7 @@ export default function Services() {
                     >
                       <span
                         className={`font-grotesk text-xs font-bold transition-colors duration-300 md:text-sm ${
-                          isActive ? "text-[#55D6C2]" : "text-[#6B7688]"
+                          isActive ? "text-[#FF5F57]" : "text-[#6B7688]"
                         }`}
                       >
                         {String(i + 1).padStart(2, "0")}
@@ -143,8 +143,8 @@ export default function Services() {
                         aria-hidden="true"
                         className={`shrink-0 text-xl transition-transform duration-300 ${
                           isExpanded
-                            ? "rotate-90 text-[#55D6C2]"
-                            : "text-white/50 group-hover:translate-x-1 group-hover:text-[#55D6C2]"
+                            ? "rotate-90 text-[#FF5F57]"
+                            : "text-white/50 group-hover:translate-x-1 group-hover:text-[#FF5F57]"
                         }`}
                       >
                         →
@@ -177,7 +177,7 @@ export default function Services() {
                             </ul>
                             <Link
                               to="/quote"
-                              className="group/link mt-6 inline-flex items-center gap-2 font-grotesk text-sm font-bold tracking-[0.14em] text-[#55D6C2] uppercase"
+                              className="group/link mt-6 inline-flex items-center gap-2 font-grotesk text-sm font-bold tracking-[0.14em] text-[#FF5F57] uppercase"
                             >
                               <span className="link-underline">
                                 Request this service
@@ -212,7 +212,7 @@ export default function Services() {
               {SERVICES.map((service) => (
                 <span key={service.slug}>
                   {service.title}
-                  <span className="mx-6 text-[#55D6C2] md:mx-8">·</span>
+                  <span className="mx-6 text-[#FF5F57] md:mx-8">·</span>
                 </span>
               ))}
             </span>

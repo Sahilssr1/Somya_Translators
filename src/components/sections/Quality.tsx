@@ -52,7 +52,7 @@ export default function Quality() {
               >
                 <span
                   aria-hidden="true"
-                  className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#55D6C2]/50 bg-[#080D16] font-grotesk text-xs font-bold text-[#55D6C2] md:h-12 md:w-12 md:text-sm"
+                  className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#FF5F57]/50 bg-[#080D16] font-grotesk text-xs font-bold text-[#FF5F57] md:h-12 md:w-12 md:text-sm"
                 >
                   {String(i + 1).padStart(2, "0")}
                 </span>
@@ -74,7 +74,7 @@ export default function Quality() {
               <h3 className="font-grotesk text-[11px] font-bold tracking-[0.28em] text-[#A6B0C0] uppercase">
                 Certifications &amp; standards
               </h3>
-              <p className="font-display text-lg text-[#55D6C2] italic md:text-xl">
+              <p className="font-display text-lg text-[#FF5F57] italic md:text-xl">
                 ISO 17100:2015 — certified translation processes.
               </p>
             </div>
@@ -93,7 +93,7 @@ export default function Quality() {
                       {cert.name}
                     </h4>
                     {cert.verified ? (
-                      <span className="rounded-full border border-[#55D6C2]/60 bg-[#55D6C2]/10 px-3 py-1 font-grotesk text-[10px] font-bold tracking-[0.16em] text-[#55D6C2] uppercase">
+                      <span className="rounded-full border border-[#FF5F57]/60 bg-[#FF5F57]/10 px-3 py-1 font-grotesk text-[10px] font-bold tracking-[0.16em] text-[#FF5F57] uppercase">
                         Verified credential
                       </span>
                     ) : (
@@ -122,7 +122,7 @@ export default function Quality() {
                   anything.
                 </p>
               </div>
-              <p className="shrink-0 font-grotesk text-[11px] font-bold tracking-[0.28em] text-[#55D6C2] uppercase">
+              <p className="shrink-0 font-grotesk text-[11px] font-bold tracking-[0.28em] text-[#FF5F57] uppercase">
                 NDA · Encrypted · Access-controlled
               </p>
             </div>

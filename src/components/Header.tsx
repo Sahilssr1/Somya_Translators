@@ -10,7 +10,8 @@ type MegaKind = "services" | "industries" | "languages" | null;
 
 function Wordmark({ light }: { light?: boolean }) {
   return (
-    <Link to="/" className="group flex items-baseline gap-2" aria-label="Somya Translators — home">
+    <Link to="/" className="group flex items-center gap-2.5" aria-label="Somya Translators — home">
+      <img src="/logo.png" alt="Somya Translators logo" className="h-9 w-auto" />
       <span
         className={`font-grotesk text-[22px] font-bold tracking-[0.18em] leading-none ${
           light ? "text-white" : "text-ink"
@@ -58,7 +59,15 @@ function ThemeToggle({ light }: { light?: boolean }) {
   );
 }
 
-function MegaPanel({ kind, onClose }: { kind: Exclude<MegaKind, null>; onClose: () => void }) {
+function MegaPanel({
+  kind,
+  onClose,
+  onEnter,
+}: {
+  kind: Exclude<MegaKind, null>;
+  onClose: () => void;
+  onEnter: () => void;
+}) {
   const navigate = useNavigate();
 
   const go = (hash: string) => {
@@ -80,6 +89,7 @@ function MegaPanel({ kind, onClose }: { kind: Exclude<MegaKind, null>; onClose: 
       exit={{ opacity: 0, y: -8 }}
       transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
       className="absolute inset-x-0 top-full border-b border-line bg-surface shadow-lift"
+      onMouseEnter={onEnter}
       onMouseLeave={onClose}
     >
       <div className="mx-auto grid max-w-7xl grid-cols-12 gap-8 px-10 py-10">
@@ -226,7 +236,7 @@ function OverlayNav({ onClose }: { onClose: () => void }) {
                 aria-expanded={openSection === acc.id}
                 className="flex w-full items-baseline gap-4 py-4 text-left"
               >
-                <span className="font-grotesk text-xs text-[#55D6C2]">0{i + 1}</span>
+                <span className="font-grotesk text-xs text-[#FF5F57]">0{i + 1}</span>
                 <span className="font-display text-4xl font-light md:text-5xl">{acc.label}</span>
                 <span
                   className={`ml-auto text-2xl text-white/50 transition-transform duration-300 ${
@@ -251,7 +261,7 @@ function OverlayNav({ onClose }: { onClose: () => void }) {
                           key={item}
                           type="button"
                           onClick={() => go(`#${acc.id}`)}
-                          className="py-1 text-left text-sm text-white/70 transition-colors hover:text-[#55D6C2]"
+                          className="py-1 text-left text-sm text-white/70 transition-colors hover:text-[#FF5F57]"
                         >
                           {item}
                         </button>
@@ -263,17 +273,20 @@ function OverlayNav({ onClose }: { onClose: () => void }) {
             </li>
           ))}
           {[
-            { label: "About", hash: "#about", n: "04" },
-            { label: "Insights", hash: "#insights", n: "05" },
-            { label: "Contact", hash: "#contact", n: "06" },
+            { label: "About", to: "/about", n: "04" },
+            { label: "Insights", to: "/#insights", n: "05" },
+            { label: "Contact", to: "/contact", n: "06" },
           ].map((item) => (
             <li key={item.label} className="border-b border-white/10">
               <button
                 type="button"
-                onClick={() => go(item.hash)}
+                onClick={() => {
+                  onClose();
+                  navigate(item.to);
+                }}
                 className="flex w-full items-baseline gap-4 py-4 text-left"
               >
-                <span className="font-grotesk text-xs text-[#55D6C2]">{item.n}</span>
+                <span className="font-grotesk text-xs text-[#FF5F57]">{item.n}</span>
                 <span className="font-display text-4xl font-light md:text-5xl">{item.label}</span>
                 <ArrowUpRight className="ml-auto text-white/50" size={22} />
               </button>
@@ -285,7 +298,7 @@ function OverlayNav({ onClose }: { onClose: () => void }) {
           <Link
             to="/quote"
             onClick={onClose}
-            className="inline-flex items-center gap-2 rounded-full bg-[#55D6C2] px-7 py-3.5 text-sm font-bold text-[#06231f]"
+            className="inline-flex items-center gap-2 rounded-full bg-[#FF5F57] px-7 py-3.5 text-sm font-bold text-[#ffffff]"
           >
             Get a Quote <ArrowUpRight size={16} />
           </Link>
@@ -338,6 +351,9 @@ export default function Header() {
     if (closeTimer.current) clearTimeout(closeTimer.current);
     closeTimer.current = setTimeout(() => setMega(null), 140);
   };
+  const cancelClose = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+  };
 
   return (
     <>
@@ -389,7 +405,7 @@ export default function Header() {
               to="/quote"
               className={`hidden items-center gap-1.5 rounded-full px-5 py-2.5 text-[13px] font-bold transition-colors sm:inline-flex ${
                 light
-                  ? "bg-white text-[#080D16] hover:bg-[#55D6C2]"
+                  ? "bg-white text-[#080D16] hover:bg-[#FF5F57]"
                   : "bg-ink text-bg hover:bg-accent hover:text-on-accent"
               }`}
             >
@@ -411,7 +427,7 @@ export default function Header() {
         </div>
 
         <AnimatePresence>
-          {mega && <MegaPanel kind={mega} onClose={() => setMega(null)} />}
+          {mega && <MegaPanel kind={mega} onClose={() => setMega(null)} onEnter={cancelClose} />}
         </AnimatePresence>
       </header>
 
