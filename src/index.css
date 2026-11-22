@@ -156,6 +156,13 @@ body {
   -webkit-text-stroke: 1px var(--line-strong);
   color: transparent;
 }
+/* Outline display type for the language strip (theme-aware ink). */
+.text-outline-strip {
+  -webkit-text-stroke: 1.5px color-mix(in srgb, var(--ink) 32%, transparent);
+  color: transparent;
+}
+
+/* Outline display type on dark backgrounds (Services marquee). */
 .text-outline-hero {
   -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.55);
   color: rgba(8, 13, 22, 0.45);

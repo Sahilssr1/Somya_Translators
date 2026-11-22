@@ -18,11 +18,14 @@ const FLOATING_LABELS = [
   { text: "Hello", className: "right-[6%] top-[14%]", delay: "0s" },
   { text: "नमस्ते", className: "right-[18%] top-[24%]", delay: "1.4s" },
   { text: "Hola", className: "right-[5%] top-[33%]", delay: "0.7s" },
+  { text: "Ciao", className: "left-[6%] top-[16%]", delay: "1.9s" },
+  { text: "Olá", className: "left-[15%] top-[26%]", delay: "0.4s" },
+  { text: "你好", className: "left-[5%] top-[35%]", delay: "2.4s" },
   { text: "Bonjour", className: "right-[17%] top-[77%]", delay: "2s" },
   { text: "こんにちは", className: "right-[6%] top-[86%]", delay: "1.1s" },
 ];
 
-const GREETINGS = ["Hello", "नमस्ते", "Hola", "Bonjour", "こんにちは"];
+const GREETINGS = ["Hello", "नमस्ते", "Hola", "Ciao", "Olá", "你好", "Bonjour", "こんにちは"];
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -106,17 +109,6 @@ export default function Hero() {
         className="absolute inset-0 bg-gradient-to-t from-[#080D16] via-[#080D16]/35 to-transparent"
         aria-hidden="true"
       />
-
-      {/* ---- Huge slow-moving outline typography ---- */}
-      <div
-        className="pointer-events-none absolute inset-x-0 top-[11%] overflow-hidden opacity-[0.5]"
-        aria-hidden="true"
-      >
-        <div className="text-outline-hero flex w-max animate-marquee-slow font-display text-[16vw] leading-none whitespace-nowrap">
-          <span className="pr-10">LANGUAGE&nbsp;·&nbsp;भाषा&nbsp;·&nbsp;言語&nbsp;·&nbsp;</span>
-          <span className="pr-10">LANGUAGE&nbsp;·&nbsp;भाषा&nbsp;·&nbsp;言語&nbsp;·&nbsp;</span>
-        </div>
-      </div>
 
       {/* ---- Floating language labels (desktop only) ---- */}
       {FLOATING_LABELS.map((label) => (

@@ -4,6 +4,7 @@ import Hero from "../components/sections/Hero";
 import Industries from "../components/sections/Industries";
 import Insights from "../components/sections/Insights";
 import Intro from "../components/sections/Intro";
+import LanguageStrip from "../components/sections/LanguageStrip";
 import Languages from "../components/sections/Languages";
 import Process from "../components/sections/Process";
 import Quality from "../components/sections/Quality";
@@ -15,6 +16,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <LanguageStrip />
       <Intro />
       <Services />
       <Industries />

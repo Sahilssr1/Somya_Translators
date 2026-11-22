@@ -230,7 +230,7 @@ export default function ContactPage() {
   return (
     <div className="bg-bg text-ink">
       {/* ------------------------------- Hero ------------------------------ */}
-      <div className="mx-auto max-w-[1440px] px-5 pt-32 pb-16 md:px-10 md:pb-20">
+      <div className="mx-auto max-w-[1440px] px-5 pt-32 pb-10 md:px-10 md:pb-12">
         <SectionTag label="Contact" />
 
         <div className="mt-8 flex flex-wrap items-end justify-between gap-8">
@@ -299,7 +299,7 @@ export default function ContactPage() {
       </div>
 
       {/* ------------------------- Form + info rail ------------------------ */}
-      <div className="mx-auto max-w-[1440px] px-5 py-20 md:px-10 md:py-28">
+      <div className="mx-auto max-w-[1440px] px-5 pt-10 pb-20 md:px-10 md:pt-12 md:pb-24">
         <div className="grid gap-14 lg:grid-cols-[1.25fr_1fr] lg:gap-20">
           {/* ---- Form / success ---- */}
           <div>
